@@ -1,15 +1,15 @@
 const express = require('express');
 const bodyParser = require('body-parser')
 const app = express();
-const port = 3000
+const PORT = process.env.PORT || 3000;
 
 app.set('view engine', 'ejs')
 app.set('views', './views')
 
 app.use (express.static(/public/styles.css));
 
-app.listen(port,()=>{
-    console.log('server is running',port);
+app.listen(PORT,()=>{
+    console.log('server is running',PORT);
 });
 
 app.get('/', (req, res)=>{
